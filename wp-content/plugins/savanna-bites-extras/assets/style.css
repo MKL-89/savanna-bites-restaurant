@@ -1,0 +1,112 @@
+/* Savanna Bites Extras – front-end styles. Colours come from the theme palette. */
+
+/* ---------- Header ---------- */
+.wp-block-site-title { white-space: nowrap; }
+.wp-block-site-logo { flex-shrink: 0; }
+
+/* Use the ☰ menu button on tablets too (WordPress only does this below 600px). */
+@media (max-width: 1023px) {
+	.wp-block-navigation__responsive-container-open:not(.always-shown) { display: flex !important; }
+	.wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) { display: none !important; }
+	.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-close { display: flex !important; }
+}
+@media (max-width: 480px) {
+	.wp-block-site-title { font-size: 1.05rem !important; }
+}
+
+/* ---------- Floating WhatsApp button ---------- */
+.sb-whatsapp {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	z-index: 9999;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 12px 18px 12px 14px;
+	border-radius: 999px;
+	background: #25d366;
+	color: #fff !important;
+	font-weight: 700;
+	text-decoration: none !important;
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.sb-whatsapp:hover,
+.sb-whatsapp:focus-visible {
+	transform: translateY(-2px);
+	box-shadow: 0 10px 26px rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 600px) {
+	.sb-whatsapp span { display: none; }      /* icon only on phones */
+	.sb-whatsapp { padding: 14px; }
+}
+
+/* ---------- Shared form fields (Contact Form 7 + reservations) ---------- */
+.wpcf7 input:not([type=submit]):not([type=checkbox]):not([type=radio]),
+.wpcf7 textarea,
+.rtb-booking-form input:not([type=hidden]):not([type=checkbox]):not([type=radio]),
+.rtb-booking-form select,
+.rtb-booking-form textarea {
+	width: 100%;
+	max-width: none;      /* the reservations plugin limits fields to 15em */
+	box-sizing: border-box;
+	padding: 0.75rem 1rem;
+	margin-top: 0.35rem;
+	border: 1px solid var(--wp--preset--color--accent-4);
+	border-radius: 8px;
+	background: #fff;
+	color: var(--wp--preset--color--contrast);
+	font: inherit;
+}
+.wpcf7 textarea { height: 150px; }
+.wpcf7 input:focus,
+.wpcf7 textarea:focus,
+.rtb-booking-form input:focus,
+.rtb-booking-form select:focus,
+.rtb-booking-form textarea:focus {
+	outline: 2px solid var(--wp--preset--color--accent-1);
+	outline-offset: 1px;
+}
+
+.wpcf7 input[type=submit],
+.rtb-booking-form button[type=submit] {
+	padding: 0.85rem 2.2rem;
+	border: 0;
+	border-radius: 999px;
+	background: var(--wp--preset--color--accent-1);
+	color: #fff;
+	font: inherit;
+	font-weight: 700;
+	cursor: pointer;
+}
+.wpcf7 input[type=submit]:hover,
+.rtb-booking-form button[type=submit]:hover {
+	background: var(--wp--preset--color--accent-3);
+}
+
+/* ---------- Reservation form layout ---------- */
+.rtb-booking-form {
+	padding: 2rem;
+	border-radius: 16px;
+	background: var(--wp--preset--color--accent-5);
+}
+.rtb-booking-form fieldset {
+	margin: 0 0 1.5rem;
+	padding: 0;
+	border: 0;
+}
+.rtb-booking-form legend {
+	margin-bottom: 0.75rem;
+	font-family: var(--wp--preset--font-family--roboto-slab);
+	font-size: var(--wp--preset--font-size--x-large);
+	font-weight: 600;
+}
+.rtb-booking-form fieldset > div { margin-bottom: 1rem; }
+.rtb-booking-form label { font-weight: 600; }
+.rtb-message {
+	padding: 1rem 1.25rem;
+	border-left: 4px solid var(--wp--preset--color--accent-3);
+	border-radius: 8px;
+	background: var(--wp--preset--color--accent-5);
+}

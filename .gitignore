@@ -1,0 +1,24 @@
+# This repository holds only the custom work for the Savanna Bites site.
+# WordPress itself and the public plugins are installed from wordpress.org
+# (see README.md), so everything is ignored except the folders listed below.
+
+/*
+!/.gitignore
+!/README.md
+!/_build/
+!/screenshots/
+
+# Custom plugin only – not WordPress core, uploads or the database.
+!/wp-content/
+/wp-content/*
+!/wp-content/plugins/
+/wp-content/plugins/*
+!/wp-content/plugins/savanna-bites-extras/
+
+# Never commit secrets, databases or backups.
+wp-config.php
+*.sqlite
+*.sql
+_backup/
+.DS_Store
+Thumbs.db
